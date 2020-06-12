@@ -1,20 +1,19 @@
-var tempImageSources = [
-	'interface-image-samples/alex-ryan2.jpg',
-	'interface-image-samples/ben-pep.jpg',
-	'interface-image-samples/bruno12.jpg',
-	'interface-image-samples/gundogan.jpg'
+var tempImageSources = [ 
+	['Scene', 'interface-image-samples/alex-ryan2.jpg'],
+	['Scene', 'interface-image-samples/ben-pep.jpg'],
+	['Scene', 'interface-image-samples/bruno12.jpg'],
+	['Scene', 'interface-image-samples/gundogan.jpg']
 ];
 
 
 var selectedShots = [
-	'video-shots/ball4.jpg',
-	'video-shots/Cazorla-Arteta.jpg',
-	'video-shots/etihad6.jpg',
-	'video-shots/giggs-moyes.jpg',
-	'video-shots/gomez-morata.jpg',
-	'video-shots/jens2.jpg',
-	'video-shots/norwood-sharp.jpg'
-
+	['Shot', 'video-shots/ball4.jpg'],
+	['Shot', 'video-shots/Cazorla-Arteta.jpg'],
+	['Shot', 'video-shots/etihad6.jpg'],
+	['Shot', 'video-shots/giggs-moyes.jpg'],
+	['Shot', 'video-shots/gomez-morata.jpg'],
+	['Shot', 'video-shots/jens2.jpg'],
+	['Shot', 'video-shots/norwood-sharp.jpg']
 ];
 
 
@@ -46,13 +45,13 @@ function autoGenerateHandler() {
 
 		var paragraph = document.createElement('p');
 		paragraph.setAttribute("class", "scene-number");
-		paragraph.innerHTML = "Scene " + (i + 0);
+		paragraph.innerHTML = tempImageSources[i][0] + ' ' + (i + 0);
 		div.appendChild(paragraph);
 
 		var img = document.createElement('img');
 		img.style.width = "100%";
 		img.style.height = "100%";
-		img.src = tempImageSources[i];
+		img.src = tempImageSources[i][1];
 		div.appendChild(img);
 		document.getElementById('story-plot').appendChild(div);
 	}
@@ -62,7 +61,6 @@ function autoGenerateHandler() {
 
 
 }
-
 
 function storyEditHandler() {
 
@@ -85,7 +83,7 @@ function storyEditHandler() {
 
 		var paragraph = document.createElement('p');
 		paragraph.setAttribute("class", "editable-scene-number");
-		paragraph.innerHTML = "Scene " + (i + 0);
+		paragraph.innerHTML = tempImageSources[i][0] + ' ' + (i + 0);
 		
 
 		var imageContainerDiv = document.createElement('div');
@@ -96,7 +94,7 @@ function storyEditHandler() {
 		var img = document.createElement('img');
 		img.style.width = "100%";
 		img.style.height = "100%";
-		img.src = tempImageSources[i % tempImageSources.length];
+		img.src = tempImageSources[i][1];
 		imageContainerDiv.appendChild(img);
 
 		var removeButton = document.createElement('button');
@@ -245,7 +243,7 @@ function searchButtonHandler() {
 
 		var paragraph = document.createElement('p');
 		paragraph.setAttribute("class", "editable-scene-number");
-		paragraph.innerHTML = "Shot " + (i + 0);
+		paragraph.innerHTML = selectedShots[i][0] + ' ' + (i + 0);
 		
 
 		var imageContainerDiv = document.createElement('div');
@@ -256,7 +254,7 @@ function searchButtonHandler() {
 		var img = document.createElement('img');
 		img.style.width = "100%";
 		img.style.height = "100%";
-		img.src = selectedShots[i % selectedShots.length];
+		img.src = selectedShots[i][1];
 		imageContainerDiv.appendChild(img);
 
 		var selectButton = document.createElement('button');
@@ -320,5 +318,11 @@ function selectButtonHandler(e) {
 
 function cancelButtonHandler() {
 	document.getElementById("video-shot-selector").style.display = "none";
+	globalAddButtonClicked = -1;
+	document.getElementById('editable-story-plot').innerHTML="";
+
+	storyEditHandler();
+
+	document.getElementById("selectable-shot-displayer").style.display = "none";
 
 }
