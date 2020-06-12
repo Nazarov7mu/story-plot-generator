@@ -1,0 +1,215 @@
+.main-container {
+	border: 1px solid blue;
+	width: 800px;
+	height: 740px;
+	margin: auto;
+	text-align: center;
+	box-sizing: border-box;
+
+}
+
+.small-container {
+	padding: 20px;
+	box-sizing: border-box;
+	margin: 50px 30px;
+	border: 1px solid blue;
+	height: 660px;
+}
+
+.input-box {
+    margin-bottom: 40px;
+}
+
+.input-label {
+	text-align: center;
+	box-sizing: border-box;
+	margin-bottom: 20px; 
+	width: 30%;
+	float: left;
+
+}
+
+.input-text-area {
+
+	box-sizing: border-box;
+	float: left;
+	margin-bottom: 20px; 
+	
+	width: 70%;
+	
+}
+
+#btn-auto-generate {
+	width: 100%;
+	background-color: #436ee8;
+	color: white;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+
+#btn-story-edit, #btn-check-result {
+	width: 100%;
+	background-color: grey;
+	color: white;
+	padding: 10px 0;
+	margin-bottom: 10px;
+}
+
+
+
+
+
+#story-plot {
+
+	box-sizing: border-box;
+	border: 1px solid blue;
+	height: 210px;
+	position: relative;
+
+   /*scrolling begins*/
+	overflow-x: scroll;
+	/*overflow-y: hidden;*/
+	white-space: nowrap;
+    margin-bottom: 20px;
+}
+
+#editable-story-plot {
+    box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	border: 1px solid blue;
+	height: 250px;
+	display: flex;
+
+	position: relative;
+
+   /*scrolling begins*/
+	overflow-x: scroll;
+	/*overflow-y: hidden;*/
+	white-space: nowrap;
+    margin-bottom: 20px;
+   
+}
+
+#video-shot-selector {
+    box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	height: 260px;   
+    margin-bottom: 50px;
+
+    position: relative;
+   
+}
+
+
+
+
+
+.scene-shot {
+	
+	position: relative;
+	margin: 10px 10px;
+	display: inline-block;   
+	width: auto;
+	
+}
+
+.editable-scene-shot {
+	box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	display: inline-block;
+	margin-left: 10px;	
+	float: left;
+	
+	
+}
+
+.add-button-div {
+	box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	display: inline-block;
+	float: left;
+	margin-left: 10px;
+	padding-top: 50px; 
+}
+
+
+.add-button-cls {
+	margin: auto;
+
+
+}
+
+.scene-shot > img {   
+
+    
+}
+
+
+.editable-scene-shot > img {   
+
+    
+}
+
+#story-plot > p {
+
+    margin: 0;
+    left: 33%;
+	position: absolute;
+	top: 50%;
+	-ms-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+
+/*button span */
+.add-button-text {
+	display: block;
+	transform: rotate(-90deg);
+	-ms-transform:rotate(-90deg); /* IE 9 */
+	-moz-transform:rotate(-90deg); /* Firefox */
+	-webkit-transform:rotate(-90deg); /* Safari and Chrome */
+	-o-transform:rotate(-90deg); /* Opera */"
+
+}
+
+
+
+
+#btn-search {
+	background-color: blue;
+	color: white;
+}
+#btn-cancel {
+	background-color: blue;
+	color: white;
+}
+
+#selectable-shot-displayer {
+	margin-top: 20px;
+	box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	
+	border: 1px solid blue;
+	display: flex;
+	position: relative;
+   /*scrolling begins*/
+	overflow-x: scroll;
+	/*overflow-y: hidden;*/
+	white-space: nowrap;
+	height: 240px;
+    
+}
+
+#selectable-shot-displayer > span {
+	line-height: 120px;
+	margin: auto;
+
+}
+
+
+ 
