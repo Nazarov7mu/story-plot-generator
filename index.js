@@ -1,3 +1,4 @@
+//For "Auto Generate"
 var tempImageSources = [ 
 	['Scene', 'interface-image-samples/alex-ryan2.jpg'],
 	['Scene', 'interface-image-samples/ben-pep.jpg'],
@@ -5,7 +6,7 @@ var tempImageSources = [
 	['Scene', 'interface-image-samples/gundogan.jpg']
 ];
 
-
+//For "Add"
 var selectedShots = [
 	['Shot', 'video-shots/ball4.jpg'],
 	['Shot', 'video-shots/Cazorla-Arteta.jpg'],
@@ -18,7 +19,6 @@ var selectedShots = [
 
 
 window.addEventListener('load', function () {
-
 	document.getElementById("editable-story-plot").style.display = "none";
 	document.getElementById("video-shot-selector").style.display = "none";
 })
@@ -29,10 +29,8 @@ function autoGenerateHandler() {
 	//document.getElementById("story-plot").innerHTML="<img src='interface-image-samples/alex-ryan2.jpg' />";
 	//document.getElementById("story-plot").innerHTML="<img src='interface-image-samples/ben-pep.jpg' />";
 
-
 	document.getElementById("story-plot").innerHTML = "";
 	//var narrativeValue = document.getElementById("narrative-value").value;
-
 	//var narrativeValueElements = narrativeValue.split("-");
 
 
@@ -62,6 +60,7 @@ function autoGenerateHandler() {
 
 }
 
+/*Draw/redraw the story shots from a given array*/
 function storyEditHandler() {
 
 
@@ -149,8 +148,8 @@ function addButtonCreator(i) {
 	
     //Click Even Listener for Add Button
 	addButton.setAttribute("onclick", "addButtonHandler(event)");
-    //Initialize Add Button Div with Add Button
 
+    //Initialize Add Button Div with Add Button
 	addButtonDiv.appendChild(addButton);
 
 	return addButtonDiv;
@@ -183,11 +182,6 @@ function removeButtonHandler(e) {
 	    document.getElementById("add-button-" + globalAddButtonClicked).style.backgroundColor = "red";
 	    
 	}
-
-	
-
-	
-   
 
 
 }
@@ -299,12 +293,13 @@ function selectButtonHandler(e) {
      //add to this id in tempImageSources => selectedShots[id]
      //refresh div
 
-     //arr.splice(index, 0, item); will insert item into arr at the specified index (deleting 0 items first, that is, it's just an insert).
+     /*arr.splice(index, 0, item); will insert item into arr at the 
+     specified index (deleting 0 items first, that is, it's just an insert).*/
 
     tempImageSources.splice(globalAddButtonClicked, 0, selectedShots[id]);
 
 
-	  //clear the displayed screen of scenes
+	//clear the displayed screen of scenes
 	document.getElementById('editable-story-plot').innerHTML="";
 	//globalAddButtonClicked = globalAddButtonClicked + 1;
 
