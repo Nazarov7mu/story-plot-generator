@@ -1,66 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-<meta content="utf-8" http-equiv="encoding">
-<title>Page Title</title>
-<link rel="stylesheet" type="text/css" href="index.css">
-<script src="index.js"></script>
-</head>
-<body>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta content="utf-8" http-equiv="encoding">
+		<title>Story Plot Generator</title>
+		<link rel="stylesheet" type="text/css" href="index.css">
+		<script src="index.js"></script>
+	</head>
+	
+	<body>
 
-<div class="main-container">
-	<div class="small-container">
-		<div id="video-story-plot-auto-generator">
-			<h1>Video Story Plot Auto Generator</h1>
+	<div class="main-container">
+		<div class="small-container">
 
-			<div class="input-box">
-				<span class="input-label">Synopsis:</span>
-				<input class="input-text-area" id="synopsis-value" type="text" name="" value="Person=Wife&Place=Bank&Action=Flight">
-							
-			</div>
+			<div id="video-story-plot-auto-generator">
+				<h1>Video Story Plot Auto Generator</h1>
 
-			<div class="input-box">
-				<span class="input-label">Narrative Structure:</span>
-				<input class="input-text-area" id="narrative-value" type="text" name="" value="1-2-3-5">
+				<div class="input-box">
+					<span class="input-label">Synopsis:</span>
+					<input class="input-text-area" id="synopsis-value" type="text" name="" value="Person=Wife&Place=Bank&Action=Flight">
+								
+				</div>
+
+				<div class="input-box">
+					<span class="input-label">Narrative Structure:</span>
+					<input class="input-text-area" id="narrative-value" type="text" name="" value="1-2-3-5">
+						
 					
+				</div>
+
+				<button id="btn-auto-generate" onclick="autoGenerateHandler()">Auto Generate</button>
+				<button id="btn-story-edit" onclick="storyEditHandler()" disabled>Story Editor</button>
+
+				<div id="story-plot">
+					<p>We don't have generated story plot</p>
+				</div>
+
+			</div>
+			<!--Hidden at the beginning-->
+			<div id="video-shot-selector">
+				
+				<div id="search-query-div">
+					<span style="margin-right: 100px"> Scene <span id="scene-id"></span> | Keyword to search a shot:</span>
+					<input style="width: 200px;" type="text" name="" value="Person=Wife&Action=Smile">
+					<button id="btn-search" onclick="searchButtonHandler()">Search</button>
+					<button id="btn-cancel" onclick="cancelButtonHandler()">Cancel</button>
+				</div>
+			<!--Hidden at the beginning-->
+				<div id="selectable-shot-displayer">
+					<span>Empty</span>				
+				</div>
 				
 			</div>
 
-			<button id="btn-auto-generate" onclick="autoGenerateHandler()">Auto Generate</button>
-			<button id="btn-story-edit" onclick="storyEditHandler()" disabled>Story Editor</button>
 
-			<div id="story-plot">
-				<p>We don't have generated story plot</p>
-			</div>
-
-		</div>
-
-		<div id="video-shot-selector">
-			
-			<div id="search-query-div">
-				<span style="margin-right: 100px"> Scene <span id="scene-id"></span> | Keyword to search a shot:</span>
-				<input style="width: 200px;" type="text" name="" value="Person=Wife&Action=Smile">
-				<button id="btn-search" onclick="searchButtonHandler()">Search</button>
-				<button id="btn-cancel" onclick="cancelButtonHandler()">Cancel</button>
-			</div>
-
-			<div id="selectable-shot-displayer">
-				<span>Empty</span>				
+			<button id="btn-check-result" disabled>Check Result</button>
+			<!--Hidden at the beginning-->
+			<div id="editable-story-plot">
+					
 			</div>
 			
-		</div>
-
-
-		<button id="btn-check-result" disabled>Check Result</button>
-
-		<div id="editable-story-plot">
-				
 		</div>
 		
 	</div>
-	
-</div>
 
-</body>
+	</body>
 </html>
