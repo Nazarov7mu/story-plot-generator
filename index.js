@@ -21,6 +21,10 @@ var selectedShots = [
 window.addEventListener('load', function () {
 	document.getElementById("editable-story-plot").style.display = "none";
 	document.getElementById("video-shot-selector").style.display = "none";
+	document.getElementById("final-video").style.display = "none";
+	document.getElementById("final-story-plot").style.display = "none";
+	
+	
 })
 
 
@@ -56,6 +60,11 @@ function autoGenerateHandler() {
 
 	document.getElementById("btn-story-edit").disabled = false;
 	document.getElementById("btn-story-edit").style.backgroundColor = 'blue';
+
+	document.getElementById("btn-check-result").disabled = false;
+	document.getElementById("btn-check-result").style.backgroundColor = 'blue';
+
+	
 
 
 }
@@ -319,5 +328,42 @@ function cancelButtonHandler() {
 	storyEditHandler();
 
 	document.getElementById("selectable-shot-displayer").style.display = "none";
+
+}
+
+function checkResultHandler() {
+	document.getElementById("video-shot-selector").style.display = "none";
+	document.getElementById("editable-story-plot").style.display = "none";
+	document.getElementById("btn-check-result").style.display = "none";
+	document.getElementById("final-video").style.display = "";
+	document.getElementById("final-story-plot").style.display = "";
+
+	document.getElementById("video-story-plot-auto-generator").style.display = "none";
+
+
+	//document.getElementById("final-story-plot").innerHTML = "";
+	//var narrativeValue = document.getElementById("narrative-value").value;
+	//var narrativeValueElements = narrativeValue.split("-");
+
+
+	for (var i = 0; i < tempImageSources.length; i++) {
+		var div = document.createElement('div');
+		div.setAttribute("class", "scene-shot");
+		div.style.height = "110px";
+		div.style.width = "195px";
+
+
+		var paragraph = document.createElement('p');
+		paragraph.setAttribute("class", "scene-number");
+		paragraph.innerHTML = tempImageSources[i][0] + ' ' + (i + 0);
+		div.appendChild(paragraph);
+
+		var img = document.createElement('img');
+		img.style.width = "100%";
+		img.style.height = "100%";
+		img.src = tempImageSources[i][1];
+		div.appendChild(img);
+		document.getElementById('final-story-plot').appendChild(div);
+	}
 
 }

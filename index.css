@@ -205,9 +205,47 @@
     
 }
 
+
 #selectable-shot-displayer > span {
 	line-height: 120px;
 	margin: auto;
+
+}
+
+#final-video {
+	margin-top: 20px;
+	box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -webkit-box-sizing: border-box;
+	
+	border: 1px solid blue;
+	display: flex;
+	position: relative;
+   /*scrolling begins*/
+	
+	/*overflow-y: hidden;*/
+	
+	height: 240px;
+
+
+}
+
+#final-video > span {
+	margin: auto;
+}
+
+#final-story-plot {
+	margin-top: 20px;
+	box-sizing: border-box;
+	border: 1px solid blue;
+	height: 210px;
+	position: relative;
+
+   /*scrolling begins*/
+	overflow-x: scroll;
+	/*overflow-y: hidden;*/
+	white-space: nowrap;
+    margin-bottom: 20px;
 
 }
 
